@@ -4,15 +4,18 @@ import com.aziko.dao.UserDao;
 import com.aziko.dao.impl.UserDaoImpl;
 import com.aziko.pojo.User;
 import com.aziko.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-
+@Service
 public class UserServiceImpl implements UserService {
 
-
-    private UserDao userDao=new UserDaoImpl();
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public List<User> findAll() {
